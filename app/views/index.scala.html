@@ -1,0 +1,7 @@
+@(title: String, user: Map[String, String], posts: List[Map[String, String]])
+@layout(title) {
+  <h1>Hello, @user.getOrElse("username", "guest")!</h1>
+  @for(post <- posts) {
+    <div><p>@post.getOrElse("author","Guest") says: <b>@post.getOrElse("body","Hello!")</b></p></div>
+  }
+}
